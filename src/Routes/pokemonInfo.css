@@ -1,0 +1,33 @@
+.pokemon {
+  align-items: center;
+  border: 1px gray solid;
+  border-radius: 10px;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-around;
+  margin: 10px 10px;
+  min-width: 25%;
+}
+
+.page-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
+
+.sectionPokedex {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgPokedex {
+  height: 20%;
+  width: 20%;
+}
+
+.image404 {
+  border: 2px ridge blue;
+  margin-top: 3rem;
+}
