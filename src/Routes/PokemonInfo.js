@@ -1,44 +1,18 @@
 import React from "react";
-import NotFound from './NotFound';
+import { Redirect } from "react-router-dom";
 import './pokemonInfo.css';
 
 class Pokemon extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: '',
-      type: '',
-      averageWeight: 0,
-      image: '',
-      summary: '',
-      foundAt: [],
-    }
-  }
-
-  componentDidMount() {
+  render() {
     const { id } = this.props.match.params;
     const pokemon = this.props.pokemons.find(pokemon => pokemon.id === parseInt(id, 10));
 
     if (!pokemon) {
       console.log('ok');
-      return <NotFound />;
+      return <Redirect to="/404" />;
     }
 
     const {name, type, averageWeight, image, summary, foundAt} = pokemon;
-
-    this.setState({
-      name,
-      type,
-      averageWeight,
-      image,
-      summary,
-      foundAt,
-    })
-  }
-
-  render() {
-    const {name, type, averageWeight, image, summary, foundAt} = this.state;
 
     return (
       <div className="page-info">
